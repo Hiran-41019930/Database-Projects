@@ -1,0 +1,15 @@
+a)DELETE FRO CUSTOMER_T WHERE Cust_Country = 'CAN';
+
+ERROR:  update or delete on table "customer_t" violates foreign key constraint "fk_cust_id" on table "invoice_t"
+DETAIL:  Key (cust_id)=(C001) is still referenced from table "invoice_t".
+SQL state: 23503
+
+* Can't do updates and delete on table 'CUSTOMER_T' because 'Cust_Country' is a foreing key attribute. 
+
+b)DELETE FROM Product_T WHERE Cntry_Origin = 'RUS';
+
+ERROR:  update or delete on table "product_t" violates foreign key constraint "fk2_invoice_line" on table "invoice_line_t"
+DETAIL:  Key (prod_code)=(P2012) is still referenced from table "invoice_line_t".
+SQL state: 23503
+
+* Can't do updates and delete on table 'Product_T' because 'Cntry_Origin' is a foreing key attribute. 
